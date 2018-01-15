@@ -1,7 +1,9 @@
 from itertools import product
 
 possible = [''.join(secret) for secret in product('ABCDEF', repeat=4)]
+print("Possible:",possible,"	len(possible):",len(possible))
 results = [(right, wrong) for right in range(5) for wrong in range(5 - right) if not (right == 3 and wrong == 1)]
+print("Result:",results,"	len(results):",len(results))
 
 def score(secret, guess):
 	first = len([speg for speg, gpeg in zip(secret, guess) if speg == gpeg])
